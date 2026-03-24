@@ -1,7 +1,6 @@
 import base64
 import os
 from odoo import models, _
-from odoo.modules.module import get_module_resource
 from odoo.exceptions import UserError
 
 
@@ -37,12 +36,13 @@ class ResConfigSettings(models.TransientModel):
     def action_apply_custom_app_icons(self):
         self.ensure_one()
         mapping = self._get_icon_mapping()
-        module_name = 'rebrand_icons'
+        module_root = os.path.dirname(os.path.dirname(__file__))
+        icons_root = os.path.join(module_root, 'static', 'icons')
         updated_count = 0
 
         for mod_name, file_base in mapping.items():
-            icon_path = get_module_resource(module_name, 'static/icons', f"{file_base}.png")
-            if not icon_path or not os.path.exists(icon_path):
+            icon_path = os.path.join(icons_root, f"{file_base}.png")
+            if not os.path.exists(icon_path):
                 continue
 
             with open(icon_path, 'rb') as f:

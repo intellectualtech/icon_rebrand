@@ -10,9 +10,9 @@
                     <h2>Custom Per-App Icons (Rebrand Dashboard Tiles)</h2>
                     <div class="alert alert-info">
                         <strong>How to use:</strong><br/>
-                        1. Put your PNG icons in <code>rebrand_icons/static/icons/</code><br/>
+                        1. Put your PNG icons in <code>static/icons/</code><br/>
                         &nbsp;&nbsp;Examples: sales.png, crm.png, inventory.png, accounting.png, etc.<br/>
-                        2. Edit the mapping in models/res_config_settings.py if needed.<br/>
+                        2. Edit the mapping in models/config_settings.py if needed.<br/>
                         3. Click the button below.<br/>
                         4. Hard refresh (Ctrl + Shift + R) the Apps page.
                     </div>
