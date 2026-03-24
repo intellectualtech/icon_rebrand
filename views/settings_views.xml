@@ -1,42 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <record id="res_config_settings_view_form_inherit_rebrand_app_icons" model="ir.ui.view">
-        <field name="name">res.config.settings.inherit.rebrand.app.icons</field>
+    <record id="res_config_settings_view_form_inherit_rebrand" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.rebrand</field>
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
-                <div class="app_settings_block" string="App Icons Rebrand">
-                    <h2>Rebrand Dashboard App Icons</h2>
-                    <div class="o_setting_left_pane"/>
-                    <div class="o_setting_right_pane">
-                        <div class="content-group">
-                            <div class="mt16">
-                                <p>
-                                    Place your custom PNG icons (recommended 256×256 or larger) in:<br/>
-                                    <code>rebrand_app_icons/static/icons/</code><br/><br/>
-                                    File name examples (without extension):<br/>
-                                    • sale_management.png → Sales<br/>
-                                    • crm.png → CRM<br/>
-                                    • stock.png or inventory.png → Inventory<br/>
-                                    • accounting.png → Invoicing/Accounting<br/>
-                                    • etc.
-                                </p>
-                                <p class="text-muted mt-3">
-                                    After adding/replacing files, click the button below.<br/>
-                                    Then hard-refresh the Apps page (Ctrl + Shift + R).
-                                </p>
-                                <button name="action_apply_custom_app_icons"
-                                        type="object"
-                                        string="Apply Custom Icons to Dashboard Apps"
-                                        class="oe_highlight mt-3"/>
-                            </div>
-                        </div>
-                    </div>
+                <div class="app_settings_block" string="Rebrand Icons">
+                    <h2>Rebrand App Icons (Odoo 19)</h2>
+                    <p>Your icons are in: <code>static/icons/</code></p>
+                    <button 
+                        name="action_apply_custom_app_icons" 
+                        type="object" 
+                        string="Apply Custom Icons to All Apps" 
+                        class="oe_highlight"/>
                 </div>
             </xpath>
         </field>
     </record>
-
 </odoo>
